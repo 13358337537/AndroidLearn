@@ -1,0 +1,11 @@
+界面布局
+   整体
+ Item
+使用GridView+BaseAdapter显示界面
+  给GridView设置点击监听
+  给GridView设置长按监听(只能第一个item有响应)
+       在回调方法中显示Alertdialog
+        处理点击修改
+                 界面更新
+                 将名称保存在sp中          
+         如何保证退出后再次进入显示修改后的名称
