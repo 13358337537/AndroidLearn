@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试Android上各种数据存储方式"
+        android:textSize="20dp"
+        android:textColor="#ff0000" />
+
+    <Button
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SharedPrefrences" 
+        android:onClick="onClickSP"/>
+
+    <Button
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="内部File存储" 
+        android:onClick="onClickIF"/>
+
+    <Button
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SD卡file存储"
+        android:onClick="onClickSDF" />
+
+    <Button
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sqlite数据库存储" 
+        android:onClick="onClickSq"/>
+
+    <Button
+        
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="网络存储" 
+        android:onClick="onClickNW"/>
+
+</LinearLayout>

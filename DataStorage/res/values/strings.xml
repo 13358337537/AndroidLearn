@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">DataStorage</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_sp">SpActivity</string>
+    <string name="title_activity_if">IfActivity</string>
+    <string name="title_activity_sdf">SDFActivity</string>
+    <string name="title_activity_sql">SQLActivity</string>
+
+</resources>
