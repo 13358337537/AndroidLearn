@@ -1,0 +1,8 @@
+分析界面结构,编写布局文件
+      整体布局  ListView
+  item的布局  相对布局
+使用ListView+BaseAdapter显示所有应用信息的列表
+      得到所有应用信息数据对象的集合List<AppInfo>
+      定义BaseAdapter的实现类:getView()
+给ListView设置Item的点击监听,在回调方法中做响应
+给ListView设置Item的长按监听,在回调方法中做响应
