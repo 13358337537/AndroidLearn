@@ -1,0 +1,57 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/btn_ad1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showad1"
+        android:text="显示一般AlertDialog" />
+
+    <Button
+        android:id="@+id/btn_ad2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showad2"
+        android:text="显示单选列表AlertDialog" />
+
+    <Button
+        android:id="@+id/btn_ad3"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showad3"
+        android:text="显示自定义AlertDialog"
+        android:layout_marginBottom="20dp" />
+
+    <Button
+        android:id="@+id/btn_pd1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showpd1"
+        android:text="显示圆形进度ProgressDialog" />
+
+    <Button
+        android:id="@+id/btn_pd2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showpd2"
+        android:text="显示水平进度ProgressDialog" 
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/btn_dpd1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showdpd"
+        android:text="显示DataPickerDialog" />
+
+    <Button
+        android:id="@+id/btn_tpd2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showtpd"
+        android:text="显示TimePickerDialog" />
+
+</LinearLayout>
