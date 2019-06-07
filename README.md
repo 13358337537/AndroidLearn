@@ -76,6 +76,7 @@
  
    删除当前行
    更新显示列表的2中方法
+   
     lv1.setAdapter(adapter);           显示列表,回到起始位置,重新加载Item视图对象
 		adapter.notifyDataSetChanged();    不会回到起始位置,使用所以缓存的Item视图对象
 		
@@ -83,15 +84,18 @@
 
 1.界面布局
  1).整体布局--> GridView
+ 
     android:numColumns="3"    显示3×3
  2).Item布局--> LinearLayout
  
 2.使用GridView+BaseAdapter显示界面
  1).通过SharedPreferences保存修改的数据
   获取sp的实现方法
+  
  sp=getSharedPreferences("cmk", Context.MODE_PRIVATE);
  
  //从sp中读取保存的名称,保证退出后再次进入显示修改后的名称
+ 
 		  if(position==0) {
 			 String savedName= sp.getString("NAME", null);
 			 if(savedName!=null) {
@@ -100,6 +104,7 @@
 		  }
  
  2).将Adapter和封装类写在一起
+ 
  public MainAdapter(Context context, String[] names, int[] icons) {
 		// TODO 自动生成的构造函数存根
 		super();
@@ -114,7 +119,9 @@
   使用Toast功能显示文件名
   
   4).给GridView设置长按监听(只能第一个item有响应)
+  
   public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+  
 		// TODO 自动生成的方法存根		
 		if(position==0) {
 			//得到当前显示的名称			
