@@ -4,12 +4,15 @@
 一.App_ListView 介绍
 
  1.界面结构,编写布局文件
+ 
    1).整体布局-->ListView
+   
    2).item的布局-->相对布局
    
  2.使用ListView+BaseAdapter显示所有应用信息的列表
    
    1).得到所有应用信息数据对象的集合List<AppInfo>
+	
       还需创建一个AppInfo应用封装类(包含创建方法,set()和get()方法)
       
    protected List<AppInfo> getAllAppInfos() {
@@ -75,21 +78,26 @@
  4.给ListView设置Item的长按监听,在回调方法中做响应
  
    删除当前行
+   
    更新显示列表的2中方法
    
     lv1.setAdapter(adapter);           显示列表,回到起始位置,重新加载Item视图对象
-		adapter.notifyDataSetChanged();    不会回到起始位置,使用所以缓存的Item视图对象
+    adapter.notifyDataSetChanged();    不会回到起始位置,使用所以缓存的Item视图对象
 		
 二.App_GridView_ChangeName 介绍
 
 1.界面布局
+
  1).整体布局--> GridView
  
     android:numColumns="3"    显示3×3
+    
  2).Item布局--> LinearLayout
  
 2.使用GridView+BaseAdapter显示界面
+
  1).通过SharedPreferences保存修改的数据
+ 
   获取sp的实现方法
   
  sp=getSharedPreferences("cmk", Context.MODE_PRIVATE);
