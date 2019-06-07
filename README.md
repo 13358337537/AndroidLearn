@@ -78,4 +78,78 @@
    更新显示列表的2中方法
     lv1.setAdapter(adapter);           显示列表,回到起始位置,重新加载Item视图对象
 		adapter.notifyDataSetChanged();    不会回到起始位置,使用所以缓存的Item视图对象
+		
+二.App_GridView_ChangeName 介绍
+
+1.界面布局
+ 1).整体布局--> GridView
+    android:numColumns="3"    显示3×3
+ 2).Item布局--> LinearLayout
+ 
+2.使用GridView+BaseAdapter显示界面
+ 1).通过SharedPreferences保存修改的数据
+  获取sp的实现方法
+ sp=getSharedPreferences("cmk", Context.MODE_PRIVATE);
+ 
+ //从sp中读取保存的名称,保证退出后再次进入显示修改后的名称
+		  if(position==0) {
+			 String savedName= sp.getString("NAME", null);
+			 if(savedName!=null) {
+				 textView.setText(savedName);
+			 }
+		  }
+ 
+ 2).将Adapter和封装类写在一起
+ public MainAdapter(Context context, String[] names, int[] icons) {
+		// TODO 自动生成的构造函数存根
+		super();
+		this.context=context;
+		this.names=names;
+		this.icons=icons;
+		sp=context.getSharedPreferences("cmk", Context.MODE_PRIVATE);
+	}
+	 
+  3).给GridView设置点击监听
+  
+  使用Toast功能显示文件名
+  
+  4).给GridView设置长按监听(只能第一个item有响应)
+  public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
+		// TODO 自动生成的方法存根		
+		if(position==0) {
+			//得到当前显示的名称			
+			final TextView textView =(TextView) view.findViewById(R.id.tv_item_name);
+			String hint =textView.getText().toString();
+			
+			//为dialog准备输入对象
+			final EditText editText =new EditText(this);
+			editText.setHint(hint);
+			
+			//在回调方法中显示Alertdialog
+			new AlertDialog.Builder(this)
+			.setTitle("修改名称")
+			.setView(editText)
+			//处理点击修改
+			.setPositiveButton("修改", new DialogInterface.OnClickListener() {				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO 自动生成的方法存根
+					String newname =editText.getText().toString();
+					//界面更新
+					textView.setText(newname);
+					//保存到sp中
+					sp.edit().putString("NAME", newname).commit();
+				}
+			})
+			.setNegativeButton("取消", new DialogInterface.OnClickListener() {				
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					// TODO 自动生成的方法存根					
+				}
+			})
+			.show();
+		}		
+		return true;
+	}        
+
  
