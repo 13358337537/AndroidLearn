@@ -106,6 +106,7 @@
  2).将Adapter和封装类写在一起
  
  public MainAdapter(Context context, String[] names, int[] icons) {
+ 
 		// TODO 自动生成的构造函数存根
 		super();
 		this.context=context;
